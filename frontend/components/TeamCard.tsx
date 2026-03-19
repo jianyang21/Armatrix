@@ -2,7 +2,7 @@ type Props = {
   name: string;
   role: string;
   bio: string;
-  photo: string;
+  photo_url: string;
   linkedin: string;
 };
 
@@ -10,13 +10,13 @@ export default function TeamCard({
   name,
   role,
   bio,
-  photo,
+  photo_url,
   linkedin,
 }: Props) {
   return (
   <div className="bg-zinc-900 text-white shadow-lg rounded-2xl p-6 hover:scale-105 transition duration-300">
     <img
-      src={photo}
+      src={photo_url}
       alt={name}
       className="w-24 h-24 rounded-full mx-auto border-2 border-gray-700"
     />
