@@ -2,6 +2,9 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 from uuid import uuid4
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 app = FastAPI()
 
@@ -59,6 +62,15 @@ db: List[TeamMember] = [
 # ------------------------
 # Routes
 # ------------------------
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/team", response_model=List[TeamMember])
 def get_team():

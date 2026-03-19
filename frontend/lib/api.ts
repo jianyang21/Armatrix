@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://armatrix.onrender.com";
 
 export async function getTeam() {
   const res = await fetch(`${BASE_URL}/team`, {
